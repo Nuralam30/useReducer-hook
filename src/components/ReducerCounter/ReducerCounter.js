@@ -1,8 +1,8 @@
 import React, { useReducer } from 'react';
 import './ReducerCounter.css';
 
-function init(initialCount) {
-    return {count: initialCount};
+function init() {
+    return {count: 0};
   }
 
 function reducer(state, action){
@@ -26,7 +26,7 @@ const ReducerCounter = ({initialCount}) => {
             <h2> Count : {state.count}</h2>
             <br />
             <button
-                onClick={() => dispatch({type: 'reset', payload: 0})}>
+                onClick={() => dispatch({type: 'reset', payload: initialCount})}>
                 Reset
             </button>
             <button onClick={ () => dispatch({type: 'decrement'})}>-</button>
